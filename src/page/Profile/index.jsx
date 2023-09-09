@@ -20,7 +20,6 @@ function Profile() {
   const [edit, setEdit] = React.useState(false);
   const [selectedPIcture, setSelectedPicture] = React.useState(null);
   const [pictureURI, setPictureURI] = React.useState('');
-  console.log(selectedPIcture);
 
   const doLogout = async () =>{
     dispatch(logout());
@@ -50,6 +49,7 @@ function Profile() {
       };
       const formJSON = JSON.stringify(form);
       await http(token).put('/profile/update', formJSON);
+      dispatch(getProfileAction(token));
       setEdit(false);
     } catch (error) {
       return error?.response?.data.message;
@@ -65,15 +65,12 @@ function Profile() {
           'Content-Type' : 'multipart/form-data'
         }
       });
+      dispatch(getProfileAction(token));
       setEdit(false);
     } catch (error) {
       return error?.response?.data.message;
     }
   };
-
-  React.useEffect(()=>{
-    dispatch(getProfileAction(token));
-  }, [token]);
 
   return (
     <div className='w-full lg:pt-20'>
