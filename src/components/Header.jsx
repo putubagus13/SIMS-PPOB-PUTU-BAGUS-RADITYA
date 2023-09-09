@@ -15,7 +15,7 @@ function Header() {
   }, [token]);
 
   return (
-    <div className="fixed top-0 z-10 bg-white flex w-full h-16 items-center justify-between px-[10%] border-b-[1px] border-grey-200">
+    <div className="lg:fixed top-0 z-10 bg-white flex w-full h-16 items-center justify-between px-[10%] border-b-[1.5px] border-grey-200">
       <Link to={'/home'} className="curson-pointer flex gap-2 items-center">
         <div className="w-8 h-8 overflow-hidden">
           <img className="w-full h-full object-cover" src={Logo} alt="" />
