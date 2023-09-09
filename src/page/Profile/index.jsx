@@ -20,7 +20,7 @@ function Profile() {
   const [edit, setEdit] = React.useState(false);
   const [selectedPIcture, setSelectedPicture] = React.useState(null);
   const [pictureURI, setPictureURI] = React.useState('');
-  console.log(pictureURI);
+  console.log(selectedPIcture);
 
   const doLogout = async () =>{
     dispatch(logout());
@@ -49,14 +49,31 @@ function Profile() {
         last_name: values.last_name || profile?.last_name,
       };
       const formJSON = JSON.stringify(form);
-      const {data} = await http(token).put('/profile/update', formJSON);
-      console.log(data);
-      dispatch(getProfileAction(token));
+      await http(token).put('/profile/update', formJSON);
       setEdit(false);
     } catch (error) {
       return error?.response?.data.message;
     }
   };
+
+  const updateProfileImage = async () => {
+    try {
+      const form = new FormData();
+      form.append('profile_image', selectedPIcture);
+      await http(token).put('/profile/image', form, {
+        headers: {
+          'Content-Type' : 'multipart/form-data'
+        }
+      });
+      setEdit(false);
+    } catch (error) {
+      return error?.response?.data.message;
+    }
+  };
+
+  React.useEffect(()=>{
+    dispatch(getProfileAction(token));
+  }, [token]);
 
   return (
     <div className='w-full pt-20'>
@@ -82,7 +99,7 @@ function Profile() {
                 onChange={changePicture}/>
               <BiSolidPencil size={10}/>
             </label>}
-            {selectedPIcture && <button
+            {selectedPIcture && <button onClick={updateProfileImage}
               className='cursor-pointer absolute 
                 right-2 flex items-center justify-center 
                 w-8 h-8 bottom-0 text-black rounded-full 
