@@ -51,12 +51,12 @@ function Home() {
       <Header />
       <div className="px-[10%]">
         <Balance />
-        <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 w-full my-20">
-          {services.map(items => (<button key={`services-${items.service_code}`} onClick={()=> doTransaction(items)} className="service flex flex-col items-center gap-1 py-2 text-white hover:text-black lg:text-black">
+        <div className="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-8 w-full my-20">
+          {services.map(items => (<button key={`services-${items.service_code}`} onClick={()=> doTransaction(items)} className="service flex flex-col items-center gap-1 py-2 text-black">
             <div className="w-14 h-14 overflow-hidden rounded-xl shadow-lg">
               <img src={items.service_icon} alt={items.service_name} className="w-full h-full object-cover" />
             </div>
-            <p className="text-sm">{items.service_name}</p>
+            <p className="text-[8px] lg:text-sm">{items.service_name}</p>
           </button>))}
         </div>
         <div className="flex flex-col gap-2 py-6 w-full">
