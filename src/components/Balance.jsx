@@ -9,7 +9,7 @@ function Balance() {
   const [open, setOpen] = React.useState(false);
   return (
     <div className="flex-1 flex flex-col lg:flex-row gap-3 lg:gap-0 my-10 w-full items-center">
-      <div className="w-[600px] flex flex-col gap-4 items-center lg:items-start">
+      <div className="w-full lg:w-[600px] flex flex-col gap-4 items-center lg:items-start">
         <div className="w-20 h-20 overflow-hidden shadow-lg rounded-full">
           {profile?.profile_image?.includes('https://minio.nutech-integrasi.app') ? <img className="w-full h-full object-cover" src={UserIcon} alt="User" /> : 
             <img className="w-full h-full object-cover" src={profile?.profile_image} alt="" />}
@@ -25,7 +25,7 @@ function Balance() {
           <p className="text-4xl text-white font-semibold">Rp</p>
           <input 
             type={open ? 'text' : 'password'}
-            className="text-4xl text-white font-semibold bg-transparent"
+            className="text-4xl text-white font-semibold bg-transparent w-full"
             value={balance?.balance || 0}
             readOnly/>
         </div>
