@@ -49,7 +49,7 @@ function Transaction() {
     }
   };
   return (
-    <div className='h-screen w-full pt-20'>
+    <div className='h-full lg:h-screen w-full lg:pt-20'>
       <Header/>
       <div className="px-[10%] w-full">
         <Balance />

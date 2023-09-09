@@ -32,7 +32,7 @@ function History() {
   }, [token, limit, offset]);
 
   return (
-    <div className='h-full w-full py-20'>
+    <div className='h-full w-full lg:py-20'>
       <Header/>
       <div className="px-[10%] w-full">
         <Balance />

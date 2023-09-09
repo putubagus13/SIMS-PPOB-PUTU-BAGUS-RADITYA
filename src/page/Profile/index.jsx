@@ -76,7 +76,7 @@ function Profile() {
   }, [token]);
 
   return (
-    <div className='w-full pt-20'>
+    <div className='w-full lg:pt-20'>
       <Header/>
       <div className='w-full px-[10%] lg:px-[30%] py-10 flex flex-col items-center gap-4'>
         <div className='flex flex-col gap-6 w-full items-center justify-center'>
