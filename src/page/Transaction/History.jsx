@@ -38,7 +38,7 @@ function History() {
         <Balance />
         <div className="w-full flex flex-col items-center lg:items-start gap-3">
           <h2 className="text-black text-2xl font-semibold">Semua Transaksi</h2>
-          <div className='flex flex-col gap-5 w-full h-3/6 overflow-y-scroll'>
+          <div className='flex flex-col gap-5 w-full h-full'>
             {history.length > 0 && <>
               {history.map(items =>(
                 <div key={`history-${items.invoice_number}`} className='flex justify-between px-[5%] border-gray-300 border-2 rounded-md py-4'>
@@ -60,7 +60,7 @@ function History() {
               type='submit'
             >See All</button>}
           </>}
-          {limit === 5 && <div className='flex gap-5 justify-center items-center py-10 w-full'>
+          {limit > 5 && <div className='flex gap-5 justify-center items-center py-10 w-full'>
             {offset === 0 ? <button className="btn btn-neutral normal-case">Back</button> :
               <button onClick={()=> setOffset(offset-1)} className="btn btn-primary normal-case">Back</button>}
             <p className='text-primary font-semibold'>Page: {offset + 1}</p>
