@@ -53,14 +53,14 @@ function History() {
             </>}
             {history.length < 1 && <EmptyTransaction />}
           </div>
-          {history.length > 5  && <>
+          {history.length === 5  && <>
             {limit !== 10 && <button onClick={()=> setLimit(10)}
               className='bg-white
               duration-300 rounded-md text-primary hover:text-red-700 text-lg font-semibold w-full normal-case h-10'
               type='submit'
             >See All</button>}
           </>}
-          {limit > 5 && <div className='flex gap-5 justify-center items-center py-10 w-full'>
+          {limit === 5 && <div className='flex gap-5 justify-center items-center py-10 w-full'>
             {offset === 0 ? <button className="btn btn-neutral normal-case">Back</button> :
               <button onClick={()=> setOffset(offset-1)} className="btn btn-primary normal-case">Back</button>}
             <p className='text-primary font-semibold'>Page: {offset + 1}</p>
