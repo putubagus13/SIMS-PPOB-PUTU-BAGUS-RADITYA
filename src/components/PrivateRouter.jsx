@@ -9,7 +9,7 @@ const PrivateRouter = ({children})=>{
   const dispatch = useDispatch();
   React.useEffect(()=>{
     if(!token){
-      dispatch(setWarningMessage('You have to login first'));
+      dispatch(setWarningMessage('Lakukan login terlebih dahulu'));
     }
   },[]);
 
