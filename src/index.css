@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer utilities{
+    .nav{
+        @apply relative ml-10
+         text-black
+        hover:text-primary
+    }
+    .nav::after{
+        @apply content-[''] bg-primary h-[3px]
+        w-[0%] left-0 -bottom-[5px] rounded-xl absolute duration-200
+    }
+    .nav:hover::after{
+        @apply w-[100%]
+    }
+    .service{
+        @apply transition ease-in-out 
+        delay-150
+        hover:-translate-y-1 hover:scale-110 duration-300
+    }
+    .navSelect{
+        @apply text-primary font-semibold ml-10
+    }
+    .formInput{
+        @apply input input-bordered text-black rounded-md w-full h-10 text-sm bg-white border-gray-300
+    }
+    .formAuth{
+        @apply input input-bordered text-black rounded-md w-full h-10 text-sm bg-white pl-12 border-gray-300
+    }
+}
