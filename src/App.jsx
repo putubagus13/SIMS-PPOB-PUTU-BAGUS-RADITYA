@@ -17,8 +17,8 @@ function App(){
       <PersistGate persistor={persistor}>
         <BrowserRouter>
           <Routes>
-            <Route path="/profile" element={<PrivateRouter><Profile/></PrivateRouter>}/>
             <Route path="/" element={<Registration/>}/>
+            <Route path="/profile" element={<PrivateRouter><Profile/></PrivateRouter>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/home" element={<PrivateRouter><Home/></PrivateRouter>}/>
             <Route path="/top-up" element={<PrivateRouter><Topup/></PrivateRouter>}/>
