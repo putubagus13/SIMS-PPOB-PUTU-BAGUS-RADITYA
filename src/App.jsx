@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import {persistor, store} from './redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
 import Registration from './page/auth/Registration';
-import Login from './page/auth/login';
+import Login from './page/auth/Login';
 import Home from './page/Home';
 import Profile from './page/Profile';
 import Topup from './page/Topup';
