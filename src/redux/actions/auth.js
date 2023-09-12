@@ -15,11 +15,7 @@ export const asyncLoginAction = createAsyncThunk(
       const {data} = await http().post('/login', formJson);
       return data;
     } catch (error) {
-      const results = error?.response?.data?.data;
       const message = error?.response?.data?.message;
-      if(results){
-        return rejectWithValue(results);
-      }
       if(error.code === 'ERR_NETWORK'){
         return rejectWithValue('Error: Conennecting to backend failed');
       }
