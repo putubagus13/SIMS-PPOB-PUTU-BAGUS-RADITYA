@@ -6,16 +6,16 @@ Aplikasi ini adalah sebuah aplikasi yang digunakan untuk melakukan transaksi pem
 
 Untuk menjalankan aplikasi ini, ikuti langkah-langkah berikut:
 
-1. Clone repositori aplikasi dari URL GitHub: [https://github.com/putubagus13/SIMS-PPOB-PUTU-BAGUS-RADITYA](https://github.com/putubagus13/SIMS-PPOB-PUTU-BAGUS-RADITYA).
+1. Clone repositori aplikasi dari URL GitHub: [https://github.com/putubagus13/SIMS-PPOB-PUTU-BAGUS-RADITYA](https://github.com/putubagus13/SIMS-PPOB-ReactJs).
 
    ```bash
-   git clone https://github.com/putubagus13/SIMS-PPOB-PUTU-BAGUS-RADITYA
+   git clone https://github.com/putubagus13/SIMS-PPOB-ReactJs
    ```
 
 2. Masuk ke direktori proyek yang telah di-clone.
 
    ```bash
-   cd SIMS-PPOB-PUTU-BAGUS-RADITYA
+   cd SIMS-PPOB-PUTU-ReacrJs
    ```
 
 3. Install semua dependensi dengan menggunakan npm (Node Package Manager).
